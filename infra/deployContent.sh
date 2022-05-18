@@ -9,11 +9,11 @@ function printInfoLine {
     printInfo "$1 \n"
 }
 
-printInfoLine "Sync S3 buck starting..."
+printInfoLine "Sync S3 bucket starting..."
 
-aws s3 sync '/website-source-directory' 's3://MyS3BucketWebsite' \
+aws s3 sync '../src/' 's3://MyS3BucketWebsite' \
 --acl public-read \
 --profile your-aws-profile \
 --region us-east-1
 
-printInfoLine "Sync S3 buck completed..."
+printInfoLine "Sync S3 bucket completed..."
