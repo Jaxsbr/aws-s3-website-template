@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Parameters:
+  BucketName:
+    Type: String
+    Description: Bucket Name
+    Default: MyS3BucketWebsite
+
+Resources:
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Description: Bestest bucket eva
+    Properties: 
+      AccessControl: PublicRead
+      BucketName: !Ref BucketName
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: error.html
+  
+  MyS3BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref MyS3Bucket
+      PolicyDocument:
+        Statement:
+          -
+            Action:
+              - s3:GetObject
+            Effect: Allow
+            Resource:
+              - !Sub arn:aws:s3:::${MyS3Bucket}              
+            Principal:
+              AWS:
+                - '*'
