@@ -4,7 +4,7 @@ Parameters:
   BucketName:
     Type: String
     Description: Bucket Name
-    Default: MyS3BucketWebsite
+    Default: my-s3-bucket-website-demo
 
 Resources:
   MyS3Bucket:

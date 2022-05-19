@@ -11,7 +11,7 @@ function printInfoLine {
 
 printInfoLine "Sync S3 bucket starting..."
 
-aws s3 sync '../src/' 's3://MyS3BucketWebsite' \
+aws s3 sync '../src/' 's3://my-s3-bucket-website-demo' \
 --acl public-read \
 --profile your-aws-profile \
 --region us-east-1
