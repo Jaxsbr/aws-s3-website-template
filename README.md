@@ -1,5 +1,8 @@
-# aws-s3-website-template
-A template project that contains the basics for deploying and managing a public website hosted in AWS S3
+# AWS Static Website Template Using Amazon S3
+With this template you can quick generate the minimum required components needed to host a static website in Amazon S3
+- Create the S3 bucket
+- Deploy your website code files
+- View the page on the internet
 
 
 ## Create the stack and S3 bucket
@@ -23,7 +26,7 @@ Go the CloudFormation in the AWS console to verify if the stack created your res
 
 OR
 
-Run this to check all if your bucket exists
+Run this to see if your bucket exists
 ```
 aws s3api list-buckets --query "Buckets[].Name" --profile your-aws-profile --region us-east-1
 ```
@@ -46,4 +49,5 @@ Sync S3 bucket completed...
 
 ## View the website
 
-http://my-s3-bucket-website-demo.s3-website-us-east-1.amazonaws.com/
+After completing the steps above you should be able navigate to the new website.
+Find the URL in the AWS Console, S3, `Properties` tab, `Static website hosting` section
